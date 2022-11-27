@@ -50,7 +50,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upw-JR-8rS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.5m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upw-JR-8rS">
                                                 <rect key="frame" x="150" y="0.0" width="150" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -58,8 +58,12 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tDG-hc-Cwx">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="tDG-hc-Cwx">
                                         <rect key="frame" x="-2" y="40" width="304" height="31"/>
+                                        <color key="minimumTrackTintColor" systemColor="systemIndigoColor"/>
+                                        <connections>
+                                            <action selector="heightSlider:" destination="Y6W-OH-hqX" eventType="valueChanged" id="sfU-W1-e9d"/>
+                                        </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="61B-Zt-THr">
                                         <rect key="frame" x="0.0" y="80" width="300" height="30"/>
@@ -70,7 +74,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L4-YH-ZPN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200Kg" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L4-YH-ZPN">
                                                 <rect key="frame" x="150" y="0.0" width="150" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -78,13 +82,21 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bWs-4c-eEw">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="bWs-4c-eEw">
                                         <rect key="frame" x="-2" y="120" width="304" height="31"/>
+                                        <color key="minimumTrackTintColor" systemColor="systemIndigoColor"/>
+                                        <connections>
+                                            <action selector="weightSlider:" destination="Y6W-OH-hqX" eventType="valueChanged" id="nw5-vq-NHi"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFo-sy-aE1">
                                         <rect key="frame" x="0.0" y="160" width="300" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="CALCULATE"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="CALCULATE">
+                                            <fontDescription key="titleFontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                            <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                        </buttonConfiguration>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -104,6 +116,10 @@
                             <constraint firstItem="ofL-wQ-Ghr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="kf4-gi-AxH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightLabel" destination="upw-JR-8rS" id="9Ym-Ey-UNd"/>
+                        <outlet property="weightLabel" destination="5L4-YH-ZPN" id="GQj-h3-S9l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,6 +130,9 @@
         <image name="bmiBackImage" width="612" height="792"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
