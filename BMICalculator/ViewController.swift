@@ -19,11 +19,13 @@ class ViewController: UIViewController {
         
         setTimerInBMILabel()
         setBackgroundGradient()
+        
+        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(switchToCalculateBMI), userInfo: nil, repeats: false)
     }
     
     //MARK: Function to set gradient in Background
     func setBackgroundGradient(){
-        var gradientLayer = CAGradientLayer()
+        let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor.systemRed.cgColor , UIColor.purple.cgColor]
         gradientLayer.frame = view.bounds
         backImage.layer.addSublayer(gradientLayer)
@@ -51,6 +53,14 @@ class ViewController: UIViewController {
             }
             index+=1
         }
+    }
+    
+    @objc func switchToCalculateBMI(){
+        let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
+        let calculateBmiVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarViewController") as UIViewController
+        calculateBmiVC.modalPresentationStyle = .fullScreen
+        calculateBmiVC.modalTransitionStyle = .coverVertical
+        self.present(calculateBmiVC, animated: true , completion: nil)
     }
 }
 
