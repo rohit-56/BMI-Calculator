@@ -56,8 +56,8 @@ class ViewController: UIViewController {
     }
     
     @objc func switchToCalculateBMI(){
-        let storyboard = UIStoryboard(name: "CalculateBMI", bundle: nil)
-        let calculateBmiVC = storyboard.instantiateViewController(withIdentifier: "CalculateBMIViewController") as UIViewController
+        let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
+        let calculateBmiVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarViewController") as UIViewController
         calculateBmiVC.modalPresentationStyle = .fullScreen
         calculateBmiVC.modalTransitionStyle = .coverVertical
         self.present(calculateBmiVC, animated: true , completion: nil)
