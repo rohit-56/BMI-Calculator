@@ -21,6 +21,7 @@
 		8CAC24892933898E00F2A455 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC24882933898E00F2A455 /* ResultViewController.swift */; };
 		8CED63A6295322CA0037E5A0 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CED63A5295322CA0037E5A0 /* MainTabBar.storyboard */; };
 		8CED63A8295322F50037E5A0 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED63A7295322F50037E5A0 /* MainTabBarViewController.swift */; };
+		8CED63AA295348300037E5A0 /* MathCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CED63A9295348300037E5A0 /* MathCalculatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		8CAC24882933898E00F2A455 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		8CED63A5295322CA0037E5A0 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		8CED63A7295322F50037E5A0 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		8CED63A9295348300037E5A0 /* MathCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathCalculatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				8CAC248629334C6A00F2A455 /* CalculateBMIViewController.swift */,
 				8CAC24882933898E00F2A455 /* ResultViewController.swift */,
 				8CED63A7295322F50037E5A0 /* MainTabBarViewController.swift */,
+				8CED63A9295348300037E5A0 /* MathCalculatorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CED63AA295348300037E5A0 /* MathCalculatorViewController.swift in Sources */,
 				8CAC248729334C6A00F2A455 /* CalculateBMIViewController.swift in Sources */,
 				8CAC24592933485000F2A455 /* BMICalculator.xcdatamodeld in Sources */,
 				8CAC24532933485000F2A455 /* ViewController.swift in Sources */,
