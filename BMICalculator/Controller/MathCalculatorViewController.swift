@@ -30,6 +30,14 @@ class MathCalculatorViewController: UIViewController {
     @IBOutlet weak var b19: UIButton!
     @IBOutlet weak var b20: UIButton!
     
+    @IBOutlet weak var delete: UIButton!
+    
+    @IBOutlet weak var expression: UITextField!
+    
+    @IBOutlet weak var result: UITextField!
+    
+    var calculatedValue = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,9 +45,11 @@ class MathCalculatorViewController: UIViewController {
        
         
         setButtonColor()
-        //setButtonBackgroundColor()
+        setButtonBackgroundColor()
         setButtonText()
         setButtonsStyle()
+        
+        expression.text = ""+String(format: "%.1f", calculatedValue)
     }
     
     func setButtonText(){
@@ -87,7 +97,7 @@ class MathCalculatorViewController: UIViewController {
     }
     
     func setButtonBackgroundColor(){
-        b1.backgroundColor = .systemGreen
+        b1.backgroundColor = .systemGray6
         b2.backgroundColor = .systemGray6
         b3.backgroundColor = .systemGray6
         b4.backgroundColor = .systemGray6
@@ -106,7 +116,7 @@ class MathCalculatorViewController: UIViewController {
         b17.backgroundColor = .systemGray6
         b18.backgroundColor = .systemGray6
         b19.backgroundColor = .systemGray6
-        b20.backgroundColor = .systemRed
+        b20.backgroundColor = .systemGreen
        
     }
     
@@ -158,6 +168,72 @@ class MathCalculatorViewController: UIViewController {
     
     func setButtonStyle(_ button : UIButton){
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
-        button.backgroundColor = .lightGray
+       // button.backgroundColor = .lightGray
     }
+    
+    
+    @IBAction func b1Action(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func b2Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b3Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b4Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b5Action(_ sender: UIButton) {
+        var currentText = expression.text
+        expression.text = (currentText ?? "0.1")+"7.0"
+        
+    }
+    @IBAction func b6Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b7Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b8Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b9Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b10Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b11Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b12Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b13Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b14Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b15Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b16Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b17Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b18Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b19Action(_ sender: UIButton) {
+        
+    }
+    @IBAction func b20Action(_ sender: UIButton) {
+        
+    }
+    
 }
