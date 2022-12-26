@@ -36,7 +36,12 @@ class MathCalculatorViewController: UIViewController {
     
     @IBOutlet weak var result: UITextField!
     
-    var calculatedValue = 0.0
+    var a = ""
+    var b = ""
+    var flag = false
+    var checkValue = false
+    var operatorUsed = ""
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +54,10 @@ class MathCalculatorViewController: UIViewController {
         setButtonText()
         setButtonsStyle()
         
-        expression.text = ""+String(format: "%.1f", calculatedValue)
+       // expression.font = UIFont(name: "Regular", size: 40)
+        expression.layer.borderColor = UIColor.clear.cgColor
+        result.font = UIFont(name: "Regular", size: 30)
+        result.layer.borderColor = UIColor.clear.cgColor
     }
     
     func setButtonText(){
@@ -168,72 +176,355 @@ class MathCalculatorViewController: UIViewController {
     
     func setButtonStyle(_ button : UIButton){
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
-       // button.backgroundColor = .lightGray
     }
     
     
     @IBAction func b1Action(_ sender: UIButton) {
+       // clear
         
+        expression.text = ""
+        result.text = ""
     }
     
     @IBAction func b2Action(_ sender: UIButton) {
-        
+       // ()
     }
     @IBAction func b3Action(_ sender: UIButton) {
+       // %
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "%"
         
+        operatorUsed = "%"
+        flag = true
+        count = 0
+        
+        if !result.text!.elementsEqual(""){
+            a = result.text!
+        }
     }
     @IBAction func b4Action(_ sender: UIButton) {
+       // /
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "/"
         
+        operatorUsed = "/"
+        flag = true
+        count = 0
+        
+        if !result.text!.elementsEqual(""){
+            a = result.text!
+        }
     }
     @IBAction func b5Action(_ sender: UIButton) {
-        var currentText = expression.text
-        expression.text = (currentText ?? "0.1")+"7.0"
-        
+        // 7
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "7"
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+        }
     }
     @IBAction func b6Action(_ sender: UIButton) {
+        // 8
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "8"
+        
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+            calculateExpression()
+        }
         
     }
     @IBAction func b7Action(_ sender: UIButton) {
+        // 9
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "9"
+        
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+        }
         
     }
     @IBAction func b8Action(_ sender: UIButton) {
+        // X
         
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "X"
+        
+        operatorUsed = "X"
+        flag = true
+        count = 0
+        
+        if !result.text!.elementsEqual(""){
+            a = result.text!
+        }
     }
     @IBAction func b9Action(_ sender: UIButton) {
+        // 4
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "4"
+        
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+            
+        }
         
     }
     @IBAction func b10Action(_ sender: UIButton) {
+        // 5
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "5"
+        
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+        }
         
     }
     @IBAction func b11Action(_ sender: UIButton) {
+       // 6
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "6"
+        
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+        }
         
     }
     @IBAction func b12Action(_ sender: UIButton) {
+        // -
         
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "-"
+        
+        operatorUsed = "-"
+        flag = true
+        count = 0
+        
+        if !result.text!.elementsEqual(""){
+            a = result.text!
+        }
     }
     @IBAction func b13Action(_ sender: UIButton) {
+        // 1
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "1"
+        
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+        }
         
     }
     @IBAction func b14Action(_ sender: UIButton) {
+        // 2
         
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "2"
+        
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+        }
     }
     @IBAction func b15Action(_ sender: UIButton) {
+        // 3
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "3"
+        
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+        }
         
     }
     @IBAction func b16Action(_ sender: UIButton) {
+        // +
         
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "+"
+        
+        operatorUsed = "+"
+        flag = true
+        count = 0
+        
+        if !result.text!.elementsEqual(""){
+            a = result.text!
+        }
     }
     @IBAction func b17Action(_ sender: UIButton) {
         
     }
     @IBAction func b18Action(_ sender: UIButton) {
+        // 0
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "0"
+        
+        if !flag {
+            a = expression.text!
+        }
+        else{
+            count = count + 1
+            let start = expression.text!.index(expression.text!.startIndex, offsetBy: expression.text!.count - count)
+            let end = expression.text!.index(expression.text!.endIndex, offsetBy: 0)
+            print(start)
+            print(end)
+            let range = start..<end
+            let check = expression.text!
+            b = String(check[range])
+            print(b)
+            calculateExpression()
+        }
         
     }
     @IBAction func b19Action(_ sender: UIButton) {
+        // .
+        
+        let currentValue = expression.text
+        expression.text = (currentValue ?? "") + "."
         
     }
     @IBAction func b20Action(_ sender: UIButton) {
+        // =
         
+        
+        
+    }
+    
+    func calculateExpression(){
+        if operatorUsed.elementsEqual("+"){
+            let value = Double(a)! + Double(b)!
+            
+            result.text = String(format: "%.2f", value)
+        }
+        else if operatorUsed.elementsEqual("-"){
+            let value = Double(a)! - Double(b)!
+            result.text = String(format: "%.2f", value)
+        }
+        else if operatorUsed.elementsEqual("X"){
+            let value = Double(a)! * Double(b)!
+            result.text = String(format: "%.2f", value)
+        }
+        else if operatorUsed.elementsEqual("/"){
+            let value = Double(a)! / Double(b)!
+            result.text = String(format: "%.2f", value)
+        }
+        else {
+            let value = Int(a)! % Int(b)!
+            result.text = String(format: "%.2f", value)
+        }
     }
     
 }
