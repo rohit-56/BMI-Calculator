@@ -269,15 +269,15 @@
                                     <constraint firstAttribute="height" constant="440" id="9zF-rf-fOX"/>
                                 </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFg-y8-wXA" userLabel="Expression">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFg-y8-wXA" userLabel="Expression">
                                 <rect key="frame" x="21.666666666666657" y="103" width="350" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="EnP-wt-4Ik"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-KW-fZj" userLabel="Result">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-KW-fZj" userLabel="Result">
                                 <rect key="frame" x="21.666666666666657" y="168" width="350" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="eoO-FV-pkl"/>
